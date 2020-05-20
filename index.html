@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="styles/index.css" />
+  <title>My Weater App</title>
+</head>
+
+<body>
+  <main class="main">
+    <div id="searchbar" class="searchbar">
+      <form class="form" id="form" autocomplete="off">
+        <input type="text" name="search" id="search" class="form__input" placeholder="Enter city name">
+        <label for="search" class="form__label">Enter city name</label>
+        <button class="form__button"><i class="fas fa-search"></i></button>
+      </form>
+
+      <ul id="searchlist" class="searchbar__list"></ul>
+    </div>
+
+    <div class="wrapper">
+      <div id="container" class="content__container"></div>
+
+      <div id="chartcontainer" class="chart__container">
+        <canvas id="chart" class="chart"></canvas>
+        <div class="chart__description">
+          <button class="chart__btn chart__btn--left" data-direct="left" disabled><i class="fas fa-angle-left"
+              disabled></i> previous day</button>
+          <p class="chart__legend"></p>
+          <button class="chart__btn chart__btn--right" data-direct="right"></i>next day <i
+              class="fas fa-angle-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+  <script src="index.js" type="module"></script>
+</body>
+
+</html>

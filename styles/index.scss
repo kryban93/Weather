@@ -1,0 +1,249 @@
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+$primary-color: #5d9cec;
+$secondary-color: #f3f3f3;
+
+body {
+  font-family: "Titillium Web", sans-serif;
+}
+
+.searchbar {
+  width: 100%;
+  padding: 40px 0px;
+  background-color: $primary-color;
+  box-shadow: 0px -10px 20px 5px rgba(0, 0, 0, 0.5) inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__list {
+    list-style-type: none;
+    width: 80%;
+    margin-top: 25px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 150px;
+
+    &__elem {
+      color: $secondary-color;
+      font-weight: 300;
+      font-size: 25px;
+
+      &--bold {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.form {
+  position: relative;
+
+  &__input {
+    font-family: inherit;
+    font-size: 25px;
+    background: transparent;
+    border-width: 0 0 2px 0;
+    border-color: $secondary-color;
+    padding: 10px 5px;
+    color: $secondary-color;
+    margin-top: 25px;
+    outline: 0;
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:placeholder-shown {
+      ~ .form__label {
+        top: 45px;
+        cursor: text;
+        font-size: 25px;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 1rem;
+    transition: 0.1s;
+    color: $secondary-color;
+  }
+
+  &__input:focus {
+    ~ .form__label {
+      position: absolute;
+      top: 0;
+      display: block;
+      transition: 0.1s;
+    }
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    color: $secondary-color;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: flex-start;
+  width: 90%;
+}
+
+.header {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+
+  &__city {
+    font-size: 60px;
+    font-weight: 600;
+  }
+
+  &__date {
+    margin: 15px 0px 20px 5px;
+    font-size: 20px;
+  }
+}
+
+.content {
+  display: none;
+  grid-template-columns: 150px 150px;
+  align-items: center;
+
+  &__clouds {
+    order: 2;
+    width: 150px;
+  }
+
+  &__element {
+    width: 120px;
+    order: 3;
+    margin-top: 15px;
+  }
+
+  &__element--main {
+    order: 1;
+    width: 150px;
+  }
+
+  &__title {
+    font-size: 20px;
+    color: grey;
+  }
+
+  &__value {
+    font-size: 40px;
+  }
+
+  &__title--main {
+    font-size: 40px;
+    color: grey;
+  }
+
+  &__value--main {
+    font-size: 60px;
+  }
+
+  &__unit {
+    font-size: 20px;
+  }
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  &__container {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+
+  &__description {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  &__legend {
+    font-size: 22px;
+    font-weight: 900;
+  }
+
+  &__btn {
+    border: none;
+    background-color: transparent;
+    font-size: 20px;
+
+    &:disabled {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .header {
+    &__city {
+      font-size: 85px;
+    }
+  }
+  .content {
+    margin-top: 15px;
+    display: none;
+    grid-template-columns: repeat(12, [col] auto);
+    grid-template-rows: repeat(2, 130px);
+
+    &__element {
+      grid-row: 2;
+      align-self: center;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (min-width: 1024px) {
+  .main {
+    flex-direction: row;
+    align-items: initial;
+    align-content: stretch;
+  }
+
+  .searchbar {
+    height: 100vh;
+    width: 500px;
+
+    &__list {
+      max-height: 900px;
+    }
+  }
+
+  .wrapper {
+    margin: 0px 40px;
+  }
+
+  .chart {
+    width: 85%;
+    &__container {
+      max-width: 85%;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+}
