@@ -3,7 +3,7 @@ import createDivElement from "./src/createDivElements.js";
 
 ("use strict");
 
-const key = "223bd9f115e7b38211222653f2222132",
+const key = "",
   weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
   chartData = {
     label: [],
